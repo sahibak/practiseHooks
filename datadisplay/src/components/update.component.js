@@ -13,6 +13,7 @@ export default function Update(props) {
           let intialData = [...dataSetup.data.breweryData];
           console.log("iiiii", intialData[0]);
           intialData[0].brewery_type = "new";
+          //   testing
           //   for (let i = 0; i < intialData.length; i++) {
           //     if (intialData[i].name === props.breweryToUpdate) {
           //       console.log(
