@@ -32,6 +32,8 @@ export default function DataComponent() {
   let loadData = (breweryData, updateView, status) => {
     /**
      * Function to load data on the page
+     * When  brewery name is clicked, it opens the accordian to display current brewery type and update field that user can use to update the type of the brewery.
+     * Update component received brewery name as a param
      * @param {object} breweryData data to be loaded
      * @param {function} updateView function to be called when a brewery name is clicked
      * @param {object} status status of the accordian for each brewery

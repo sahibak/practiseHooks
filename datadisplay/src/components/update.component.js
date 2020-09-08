@@ -5,13 +5,13 @@ import _, { initial } from "lodash";
 export default function Update(props) {
   const dataSetup = useContext(DataContext);
 
-  let updateType = (event, newType) => {
+  let updateType = (event) => {
     /**
      * To update brewery type and then reset the update field to blank
      * @param event onSubmit event
-     * @param {string} newType updated type of the brewery
      */
     event.preventDefault();
+    let newType = event.target.newType.value;
     let intialData = _.cloneDeep(dataSetup.data);
     console.log("iiiii", intialData.breweryData[0]);
     for (let i = 0; i < intialData.breweryData.length; i++) {
@@ -24,12 +24,12 @@ export default function Update(props) {
     console.log("####", dataSetup.data.breweryData[0]);
     dataSetup.setData(intialData);
     /*Clear the type entered */
-    newType = "";
+    event.target.newType.value = "";
   };
 
   return (
     <>
-      <form onSubmit={(event) => updateType(event, event.target.newType.value)}>
+      <form onSubmit={(event) => updateType(event)}>
         <label>New Brewery Type</label>
         <input name="newType" placeholder="Enter new type"></input>
         <button type="submit">Enter</button>
